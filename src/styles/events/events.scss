@@ -1,0 +1,165 @@
+.events {
+  margin-bottom: 30px;
+}
+
+.events__inner {
+  text-align: center;
+}
+
+.events__header {
+  font-size: 5rem;
+  font-weight: 300;
+  color: #373838;
+  margin-bottom: .5em;
+}
+
+.events__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
+  font-size: 10px;
+}
+
+.events__item {
+  flex: 0 1 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.events__item:first-child {
+
+  .events__date,
+  .events__btn {
+    background-color: #9b242d;
+    align-self: center;
+  }
+
+  .events__date::after {
+    border-color: #9b242d transparent transparent transparent;
+  }
+
+  .events__btn:hover {
+    background-color: darken(#9b242d, 10%);
+  }
+}
+
+.events__date,
+.events__btn {
+  align-self: center;
+}
+
+.events__date {
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+  background-color: #373838;
+  margin-bottom: .5em;
+  padding: 0.47em 0.55em;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 14px 0 14px;
+    border-color: #383837 transparent transparent transparent;
+  }
+}
+
+.events__months {
+  color: #9b242d;
+  text-transform: capitalize;
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+
+.events__title {
+  font-size: 1.5em;
+  margin-bottom: .4em;
+  color: #373838;
+}
+
+.events__description {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #373838;
+}
+
+.events__btn {
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1em 1.85em;
+  background-color: #373838;
+  border: 0;
+
+  &:hover {
+    background-color: darken(#373838, 10%);
+  }
+}
+
+@media (min-width: 530px) {
+  .events__item {
+    flex: 0 1 47%;
+  }
+}
+
+@media (min-width: 768px) {
+  .events {
+    margin-bottom: 60px;
+  }
+
+  .events__header {
+    font-size: 5rem;
+    font-weight: 300;
+    color: #373838;
+  }
+
+  .events__item {
+    flex: 0 1 30%;
+  }
+
+  .events__date {
+    font-size: 3.6rem;
+  }
+
+  .events__months {
+    font-size: 3rem;
+    margin-bottom: .4em;
+  }
+
+  .events__title {
+    font-size: 1.8rem;
+    margin-bottom: .4em;
+  }
+
+  .events__description {
+    font-size: 1.4rem;
+    margin-bottom: 1.5em;
+  }
+
+  .events__btn {
+    font-size: 1.4rem;
+  }
+
+  .events__item:nth-of-type(odd):last-child {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 968px) {
+  .events {
+    margin-bottom: 100px;
+  }
+
+}

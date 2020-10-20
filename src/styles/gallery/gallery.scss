@@ -1,0 +1,263 @@
+.gallery {
+  display: grid;
+  grid-template-rows: repeat(4, 150px);
+  grid-template-columns: 100%;
+  background-color: #ccc;
+  margin-bottom: 20px;
+}
+
+.gallery__item_img {
+  position: relative;
+}
+
+.gallery__image {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__item {
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.empty,
+  &.gallery__item_img {
+    display: none;
+  }
+}
+
+.gallery__item.gallery__facebook {
+  display: flex;
+}
+
+.gallery__item_green {
+  background-color: #46a651;
+}
+
+.gallery__item_1 {
+  background-color: #f1efec;
+}
+
+.gallery__item_2 {
+  background-color: green;
+}
+
+.gallery__item_3 {
+  background-color: #9b242d;
+  flex-direction: column;
+
+  h5 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+.content {
+  text-align: center;
+  width: 90%;
+  padding: 0 15px;
+
+}
+
+.gallery__item_4 {
+  background-color: #46a651;
+
+
+  & h5 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+
+  & form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto';
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+
+    input {
+      font-family: inherit;
+      font-size: 1.8rem;
+      padding: 0.7em 0.9em;
+      border: none;
+      max-width: 274px;
+      width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0.7em 0.9em;
+      color: #fff;
+      background-color: #348e3e;
+      border: none;
+      max-width: 120px;
+      width: 100%;
+
+      &:hover {
+        background-color: darken(#348e3e, 3%)
+      }
+    }
+  }
+
+  & p {
+    font-family: 'Roboto';
+    color: #fff;
+    font-size: 1.6rem;
+  }
+}
+
+.gallery__item.gallery__item_5 {
+  display: block;
+}
+
+.gallery__item_5 img {
+  display: none;
+}
+
+.gallery__facebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-height: 317px;
+  width: 100%;
+  height: 100%;
+  background-color: #3b5997;
+
+  a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: transform .1s linear;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  i {
+    font-size: 8rem;
+    color: #fff;
+    margin-bottom: .4em;
+  }
+
+  p {
+    font-family: 'Roboto';
+    font-size: 1.6rem;
+    color: #fff;
+  }
+}
+
+@media (min-width: 620px) {
+  .gallery {
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    grid-template-columns: 50% 50%;
+    background-color: #ccc;
+    margin-bottom: 20px;
+  }
+
+  .gallery__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.gallery__item_img {
+      display: flex;
+    }
+  }
+
+  .gallery__item_img {
+    position: relative;
+  }
+
+  .gallery__image {
+    display: inline-block;
+  }
+
+  .gallery__facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: 317px;
+    width: 100%;
+    height: 100%;
+    background-color: #3b5997;
+
+    i {
+      font-size: 8rem;
+      color: #fff;
+      margin-bottom: .4em;
+    }
+
+    p {
+      font-family: 'Roboto';
+      font-size: 2rem;
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .gallery__item_4 form input {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 968px) {
+  .gallery {
+    grid-template-rows: repeat(3, minmax(auto, 317px));
+    grid-template-columns: 1fr minmax(auto, 350px) minmax(auto, 330px) minmax(auto, 350px) 1fr;
+    background-color: #ccc;
+    margin-bottom: 100px;
+  }
+
+  .content {
+    max-width: 505px;
+    width: 100%;
+    margin-right: 80px;
+  }
+
+  .gallery__item.empty {
+    display: flex;
+  }
+
+  .gallery__item_4 {
+    grid-column: 2/4;
+
+    & form button {
+      font-size: 1em;
+    }
+  }
+
+  .gallery__item_5 {
+    grid-column: 4 / 6;
+    grid-row: 2 / 4;
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  .gallery__item_6 {
+    grid-column: 1 / 4;
+  }
+
+  .gallery__facebook {
+    max-width: 350px;
+  }
+}

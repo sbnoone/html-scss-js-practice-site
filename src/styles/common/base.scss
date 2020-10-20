@@ -1,0 +1,47 @@
+html,
+body {
+  font-family: 'RobotoSlab', serif;
+  font-size: 6px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+
+  @media (min-width: 768px) {
+
+    &,
+    & {
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 968px) {
+
+    &,
+    & {
+      font-size: 10px;
+    }
+  }
+}
+
+
+main {
+  margin-top: 60px; // <= header size
+
+  @media (min-width: 790px) {
+    & {
+      margin-top: 80px;
+    }
+  }
+}
+
+@include customScrollbar;
+
+.container {
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.locked {
+  overflow: hidden;
+}
